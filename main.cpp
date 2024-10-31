@@ -1,15 +1,11 @@
 double my_pow(double number, int degree) {
-	if (degree < 0) {
-		bool isNegativeDegree = 1;
-	}
-	if (isNegativeDegree) {
-		number = 1 / number; 
-		degree = -degree;      
-	}
-	double answer = number;
-	for (int i = 0; i < degree; i++)
-	{
-		answer = answer * number;
-	}
+    double answer = 1.0;
+    while (degree > 0) {
+        if (degree % 2 == 1) {               
+            answer = answer * number;
+        }
+        number = number* number;
+        degree = degree/2;
+    }
 	return answer;
 }
